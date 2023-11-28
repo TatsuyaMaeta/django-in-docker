@@ -1,7 +1,18 @@
 # step
 
+dockerfileで呼び出している環境ファイルを作成
+```terminal
+touch .env.dev
+```
+
+コンテナを起動
 ```terminal
 docker compose up -d
+```
+
+コンテナ名を確認
+```terminal
+docker container ls
 ```
 
 ```terminal
@@ -14,6 +25,20 @@ cd app
 python sample.py 180
 
 # >> 3.141592653589793
+```
+
+仮想環境の起動、activate
+```terminal
+python -m venv venv
+source venv/bin/activate
+
+<!-- 停止時 -->
+deactivate
+```
+
+仮想環境内で、requirementsの設定ライブラリをインストール
+```terminal
+pip install -r requirements.txt
 ```
 
 ```terminal

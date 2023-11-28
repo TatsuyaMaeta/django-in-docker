@@ -1,6 +1,10 @@
 FROM python:3.11.4-slim-buster
 USER root
 
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 RUN apt-get update
 RUN apt-get -y install locales && \
     localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
@@ -13,5 +17,5 @@ RUN apt-get install -y vim less
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+# COPY ./requirements.txt .
+# RUN pip install -r requirements.txt
